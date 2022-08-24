@@ -30,25 +30,25 @@
             {% endif %}
 
             <div class="form__item">
-                <label for="area" class="form__label"> Enter your total area: </label>
+                <label for="area" class="form__label"> Total area of your house: </label>
                 <input type="text" placeholder="Eg 1000" name="area" id="area" class="form__input {{ 'form__input--error' if area_error else '' }}" required>
                 <label for="area" class="form__error">Error! {{ error }}</label>
             </div>
 
             <div class="form__item">
-                <label for="bedrooms" class="form__label">Number of bedrooms: </label>
+                <label for="bedrooms" class="form__label">Number of bedrooms in your house: </label>
                 <input type="number" placeholder="Eg 2" name="number of bedrooms" id="bedrooms" class="form__input {{ 'form__input--error' if bedroom_error else '' }}" required>
                 <label for="bedrooms" class="form__error">Error! {{ error }}</label>
             </div>
 
             <div class="form__item">
-                <label for="bathrooms" class="form__label"> Enter the number of bathrooms: </label>
+                <label for="bathrooms" class="form__label"> Number of bathrooms in your house: </label>
                 <input type="number" placeholder="Eg 1" name="bathrooms" id="bathrooms" class="form__input {{ 'form__input--error' if bathroom_error else '' }}" required>
                 <label for="bathrooms" class="form__error">Error! {{ error }}</label>
             </div>
 
             <div class="form__item">
-                <label for="stories" class="form__label">Number of floors: </label>
+                <label for="stories" class="form__label">Number of floors in your house: </label>
                 <input type="number" placeholder="Eg 2" name="stories" id="stories" class="form__input {{ 'form__input--error' if stories_error else '' }}" required>
                 <label for="stories" class="form__error">Error! {{ error }}</label>
             </div>
@@ -67,7 +67,7 @@
 
             <div class="form__item">
                 <div>
-                    <span class="form__label">Does Your House has a guest room?</span>
+                    <span class="form__label">Is guest house included?</span>
                     <br>
                     <input type="radio" name="guestroom" id="guestroom0" value="1" checked="checked" class="form__box">
                     <span class="form__label form__box__label">yes</span>
@@ -79,7 +79,7 @@
             
             <div class="form__item">
                 <div>
-                    <span class="form__label">Does Your House has a basement?</span>
+                    <span class="form__label">Is basement included?</span>
                     <br>
                     <input type="radio" name="basement" id="basement0" value="1" checked="checked" class="form__box">
                     <span class="form__label form__box__label">yes</span>
@@ -91,7 +91,7 @@
             
             <div class="form__item">
                 <div>
-                    <span class="form__label">Does Your House have water heating installed?</span>
+                    <span class="form__label">Is water heating system included?</span>
                     <br>
                     <input type="radio" name="hotwaterheating" id="hotwaterheating0" value="1" checked="checked" class="form__box">
                     <span class="form__label form__box__label">yes</span>
