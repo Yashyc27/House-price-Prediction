@@ -25,30 +25,30 @@
             </div>
             {% elif Price %}
             <div class="form__item form__message__item form__message__success">
-                <h1 class="form__message"> Predicted Price: {{Price}}/- </h1>
+                <h1 class="form__message"> Predicted Price of your house: {{Price}}/- </h1>
             </div>
             {% endif %}
 
             <div class="form__item">
-                <label for="area" class="form__label"> Total area of your house: </label>
+                <label for="area" class="form__label"> Enter your total area of your house: </label>
                 <input type="text" placeholder="Eg 1000" name="area" id="area" class="form__input {{ 'form__input--error' if area_error else '' }}" required>
                 <label for="area" class="form__error">Error! {{ error }}</label>
             </div>
 
             <div class="form__item">
-                <label for="bedrooms" class="form__label">Number of bedrooms in your house: </label>
+                <label for="bedrooms" class="form__label"> Enter the number of bedrooms in your house: </label>
                 <input type="number" placeholder="Eg 2" name="number of bedrooms" id="bedrooms" class="form__input {{ 'form__input--error' if bedroom_error else '' }}" required>
                 <label for="bedrooms" class="form__error">Error! {{ error }}</label>
             </div>
 
             <div class="form__item">
-                <label for="bathrooms" class="form__label"> Number of bathrooms in your house: </label>
+                <label for="bathrooms" class="form__label"> Enter the number of bathrooms in your house: </label>
                 <input type="number" placeholder="Eg 1" name="bathrooms" id="bathrooms" class="form__input {{ 'form__input--error' if bathroom_error else '' }}" required>
                 <label for="bathrooms" class="form__error">Error! {{ error }}</label>
             </div>
 
             <div class="form__item">
-                <label for="stories" class="form__label">Number of floors in your house: </label>
+                <label for="stories" class="form__label"> Enter the number of floors in your house: </label>
                 <input type="number" placeholder="Eg 2" name="stories" id="stories" class="form__input {{ 'form__input--error' if stories_error else '' }}" required>
                 <label for="stories" class="form__error">Error! {{ error }}</label>
             </div>
@@ -67,7 +67,7 @@
 
             <div class="form__item">
                 <div>
-                    <span class="form__label">Is guest house included?</span>
+                    <span class="form__label">Does Your House has a guest room?</span>
                     <br>
                     <input type="radio" name="guestroom" id="guestroom0" value="1" checked="checked" class="form__box">
                     <span class="form__label form__box__label">yes</span>
@@ -79,7 +79,7 @@
             
             <div class="form__item">
                 <div>
-                    <span class="form__label">Is basement included?</span>
+                    <span class="form__label">Does Your House has a basement included?</span>
                     <br>
                     <input type="radio" name="basement" id="basement0" value="1" checked="checked" class="form__box">
                     <span class="form__label form__box__label">yes</span>
@@ -91,7 +91,7 @@
             
             <div class="form__item">
                 <div>
-                    <span class="form__label">Is water heating system included?</span>
+                    <span class="form__label">Does Your House have water heating pre installed?</span>
                     <br>
                     <input type="radio" name="hotwaterheating" id="hotwaterheating0" value="1" checked="checked" class="form__box">
                     <span class="form__label form__box__label">yes</span>
@@ -103,7 +103,7 @@
 
             <div class="form__item">
                 <div>
-                    <span class="form__label">Does Your House have air conditioning installed?</span>
+                    <span class="form__label"> Is air conditioning installed?</span>
                     <br>
                     <input type="radio" name="airconditioning" id="airconditioning0" value="1" checked="checked" class="form__box">
                     <span class="form__label form__box__label">yes</span>
@@ -114,7 +114,7 @@
             </div>
 
             <div class="form__item">
-                <label for="parking" class="form__label"> Enter the number of parking slots: </label>
+                <label for="parking" class="form__label"> Enter the number of parking slots included: </label>
                 <input type="number" placeholder="Eg 2" name="parking" id="parking" class="form__input {{ 'form__input--error' if parking_error else '' }}" required>
                 <label for="parking" class="form__error">Error! {{ error }}</label>
             </div>
