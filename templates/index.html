@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Form</title>
+        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static',filename='form.css') }}">
+    </head>
+    <body>
+        <form class="form" action="./" method="POST" id='form'>
+            <!-- Head -->
+            <div class="form__item">
+                <h1 class="form__title">House Price Prediction</h1>
+                <h2 class="form__desc">Enter the attributes to get the price</h2>
+            </div>
+
+            {% if error %}
+            <div class="form__item form__message__item form__message__error">
+                <h1 class="form__message"> An error has occured! <br> Message: {{ error }} </h1>
+            </div>
+            {% elif Price %}
+            <div class="form__item form__message__item form__message__success">
+                <h1 class="form__message"> Predicted Price: {{Price}}/- </h1>
+            </div>
+            {% endif %}
+
+            <div class="form__item">
+                <label for="area" class="form__label"> Enter your total area: </label>
+                <input type="text" placeholder="Eg 1000" name="area" id="area" class="form__input {{ 'form__input--error' if area_error else '' }}" required>
+                <label for="area" class="form__error">Error! {{ error }}</label>
+            </div>
+
+            <div class="form__item">
+                <label for="bedrooms" class="form__label"> Enter the number of bedrooms: </label>
+                <input type="number" placeholder="Eg 2" name="number of bedrooms" id="bedrooms" class="form__input {{ 'form__input--error' if bedroom_error else '' }}" required>
+                <label for="bedrooms" class="form__error">Error! {{ error }}</label>
+            </div>
+
+            <div class="form__item">
+                <label for="bathrooms" class="form__label"> Enter the number of bathrooms: </label>
+                <input type="number" placeholder="Eg 1" name="bathrooms" id="bathrooms" class="form__input {{ 'form__input--error' if bathroom_error else '' }}" required>
+                <label for="bathrooms" class="form__error">Error! {{ error }}</label>
+            </div>
+
+            <div class="form__item">
+                <label for="stories" class="form__label"> Enter the number of floors: </label>
+                <input type="number" placeholder="Eg 2" name="stories" id="stories" class="form__input {{ 'form__input--error' if stories_error else '' }}" required>
+                <label for="stories" class="form__error">Error! {{ error }}</label>
+            </div>
+
+            <div class="form__item">
+                <div>
+                    <span class="form__label">Is your house on main road?</span>
+                    <br>
+                    <input type="radio" name="mainroad" id="mainroad0" value="1" checked="checked" class="form__box">
+                    <span class="form__label form__box__label">yes</span>
+                    <br>
+                    <input type="radio" name="mainroad" id="mainroad1" value="0" class="form__box">
+                    <span class="form__label form__box__label">no</span>
+                </div>
+            </div>
+
+            <div class="form__item">
+                <div>
+                    <span class="form__label">Does Your House has a guest room?</span>
+                    <br>
+                    <input type="radio" name="guestroom" id="guestroom0" value="1" checked="checked" class="form__box">
+                    <span class="form__label form__box__label">yes</span>
+                    <br>
+                    <input type="radio" name="guestroom" id="guestroom1" value="0" class="form__box">
+                    <span class="form__label form__box__label">no</span>
+                </div>
+            </div>
+            
+            <div class="form__item">
+                <div>
+                    <span class="form__label">Does Your House has a basement?</span>
+                    <br>
+                    <input type="radio" name="basement" id="basement0" value="1" checked="checked" class="form__box">
+                    <span class="form__label form__box__label">yes</span>
+                    <br>
+                    <input type="radio" name="basement" id="basement1" value="0" class="form__box">
+                    <span class="form__label form__box__label">no</span>
+                </div>
+            </div>
+            
+            <div class="form__item">
+                <div>
+                    <span class="form__label">Does Your House have water heating installed?</span>
+                    <br>
+                    <input type="radio" name="hotwaterheating" id="hotwaterheating0" value="1" checked="checked" class="form__box">
+                    <span class="form__label form__box__label">yes</span>
+                    <br>
+                    <input type="radio" name="hotwaterheating" id="hotwaterheating1" value="0" class="form__box">
+                    <span class="form__label form__box__label">no</span>
+                </div>
+            </div>
+
+            <div class="form__item">
+                <div>
+                    <span class="form__label">Does Your House have air conditioning installed?</span>
+                    <br>
+                    <input type="radio" name="airconditioning" id="airconditioning0" value="1" checked="checked" class="form__box">
+                    <span class="form__label form__box__label">yes</span>
+                    <br>
+                    <input type="radio" name="airconditioning" id="airconditioning1" value="0" class="form__box">
+                    <span class="form__label form__box__label">no</span>
+                </div>
+            </div>
+
+            <div class="form__item">
+                <label for="parking" class="form__label"> Enter the number of parking slots: </label>
+                <input type="number" placeholder="Eg 2" name="parking" id="parking" class="form__input {{ 'form__input--error' if parking_error else '' }}" required>
+                <label for="parking" class="form__error">Error! {{ error }}</label>
+            </div>
+
+            <div class="form__item">
+                <div>
+                    <span class="form__label">Is it in a preferd area?</span>
+                    <br>
+                    <input type="radio" name="prefarea" id="prefarea0" value="1" checked="checked" class="form__box">
+                    <span class="form__label form__box__label">yes</span>
+                    <br>
+                    <input type="radio" name="prefarea" id="prefarea1" value="0" class="form__box">
+                    <span class="form__label form__box__label">no</span>
+                </div>
+            </div>
+
+            <div class="form__item">
+                <span class="form__label">Furnishing Status of your house:</span>
+                <select name="furnishingstatus" id="furnishingstatus" required>
+                    <option value="0">Unfurnished</option>
+                    <option value="1">Semi-Furnished</option>
+                    <option value="2">Furnished</option>
+                </select>
+            </div>
+            
+            <!-- Submit and Reset -->
+            <div class="form__end">
+                <button type="submit" class="form__btn submit">Submit</button>
+                <button type="reset" class="form__btn reset">Clear Response</button>
+            </div>
+        </form>
+    </body>
+</html>
