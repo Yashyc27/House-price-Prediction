@@ -16,7 +16,7 @@
             <!-- Head -->
             <div class="form__item">
                 <h1 class="form__title">House Price Prediction</h1>
-                <h2 class="form__desc">Enter the attributes to get the price</h2>
+                <h2 class="form__desc">Enter the fetures to get the price of your house</h2>
             </div>
 
             {% if error %}
@@ -37,7 +37,7 @@
 
             <div class="form__item">
                 <label for="bedrooms" class="form__label"> Enter the number of bedrooms: </label>
-                <input type="number" placeholder="Eg 2" name="number of bedrooms" id="bedrooms" class="form__input {{ 'form__input--error' if bedroom_error else '' }}" required>
+                <input type="number" placeholder="Eg 2" name="bedrooms" id="bedrooms" class="form__input {{ 'form__input--error' if bedroom_error else '' }}" required>
                 <label for="bedrooms" class="form__error">Error! {{ error }}</label>
             </div>
 
